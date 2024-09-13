@@ -1,9 +1,14 @@
 Repositório criado para desenvolvimento/documentação do projeto para a disciplina PROGRAMAÇÃO 2
 
 Acadêmicos: João Victor Surdi, Gabriel de Oliveira, Vinicius Fantin e Rafael Borga
-Tópico: SEGURADORAS (CHECK-LIST)
+Tópico: Sistema Veterinário
 
-Pensamos primeiramente em realizar um sistema de Check-List para seguradoras em geral, o projeto terá de ser realizado em PHP em conjuto a um banco de dados de nossa escolha...
+Pensamos primeiramente em realizar um sistema para ocorrências de uma clínica veterinária, onde o cliente poderá verificar e acompanhar o atendimento do seu companheiro enquanto o mesmo se encontra na consulta médica
 
-Preferimos por fazer uma pré-analise do foco do sistema antes de escolher as ferramentas restantes para o desenvolvimento.
-
+Teremos um sistema de cadastro;
+Atendimentos;
+Feedbacks do cliente;
+Status do atendimento;
+Descrição de procedimentos;
+Reagendamento de consulta;
+Finalização do atendimento com nota e descrição;
