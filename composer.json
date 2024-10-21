@@ -1,8 +1,0 @@
-{
-    "require": {
-        "symfony/security-core": "^7.1"
-    },
-    "require-dev": {
-        "symfony/maker-bundle": "^1.61"
-    }
-}
