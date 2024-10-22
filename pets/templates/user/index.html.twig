@@ -17,4 +17,10 @@
         <li>Your template at <code>C:/Users/Joao_/OneDrive/Área de Trabalho/Faculdade/Projeto_Pets/Projeto-P.E.T.S/pets/templates/user/index.html.twig</code></li>
     </ul>
 </div>
+
+{% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
 {% endblock %}
