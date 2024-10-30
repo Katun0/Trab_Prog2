@@ -10,6 +10,7 @@
                 {{ importmap('app') }}
                 {% endblock %}
 
+            <link rel="stylesheet" href="{{ asset('styles/sidebar.css') }}">
             
         {% endblock %}
 
@@ -17,7 +18,25 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %} 
-        {% endblock %}
+
+{% block nav %}
+
+{% if app.user %}
+        <div class="mb-3">
+            Bem vindo, {{ app.user.nome }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+
+        <div class='Navbar'>
+            <ul>
+                <li><a href="{{ path('app_register') }}">Register</a></li>
+                <li><a href="{{ path('app_home') }}">Home</a></li>
+                <li><a href="{{ path('app_user') }}">User</a></li>
+                <li><a href="{{ path('app_cadastroCliente') }}">Cadastro de Cliente</a></li>
+                <li><a href="{{ path('app_cadastroAnimal') }}">Cadastro de Animal</a></li>
+            </ul>
+        </div>
+    {% endif %}
+
+    {% endblock %}
     </body>
 </html>
