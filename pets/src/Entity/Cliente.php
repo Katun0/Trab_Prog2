@@ -14,13 +14,13 @@ class Cliente
     private ?int $id = null;
 
     #[ORM\Column(length: 200)]
-    private ?string $Nome = null;
+    private ?string $nome = null;
 
     #[ORM\Column(length: 20)]
-    private ?string $CPF_CNPJ = null;
+    private ?string $cpf_cnpj = null;
 
     #[ORM\Column(length: 15)]
-    private ?string $Contato = null;
+    private ?string $contato = null;
 
     #[ORM\Column(length: 200, nullable: true)]
     private ?string $email = null;
@@ -30,38 +30,38 @@ class Cliente
         return $this->id;
     }
 
-    public function getNome(): ?string
+    public function getnome(): ?string
     {
-        return $this->Nome;
+        return $this->nome;
     }
 
-    public function setNome(string $Nome): static
+    public function setnome(string $nome): static
     {
-        $this->Nome = $Nome;
+        $this->nome = $nome;
 
         return $this;
     }
 
     public function getCPFCNPJ(): ?string
     {
-        return $this->CPF_CNPJ;
+        return $this->cpf_cnpj;
     }
 
-    public function setCPFCNPJ(string $CPF_CNPJ): static
+    public function setCPFCNPJ(string $cpf_cnpj): static
     {
-        $this->CPF_CNPJ = $CPF_CNPJ;
+        $this->cpf_cnpj = $cpf_cnpj;
 
         return $this;
     }
 
-    public function getContato(): ?string
+    public function getcontato(): ?string
     {
-        return $this->Contato;
+        return $this->contato;
     }
 
-    public function setContato(string $Contato): static
+    public function setcontato(string $contato): static
     {
-        $this->Contato = $Contato;
+        $this->contato = $contato;
 
         return $this;
     }
