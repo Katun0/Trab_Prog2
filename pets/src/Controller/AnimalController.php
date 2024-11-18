@@ -9,6 +9,7 @@ use App\Repository\AnimalRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -29,7 +30,7 @@ class AnimalController extends AbstractController{
             if ($form->isSubmitted() && $form->isValid()){
                 $raca = $form->get('raca')->getData();
                 if ($raca instanceof Raca) {
-                    $animal->setRaca($raca->getNome());
+                    $animal->setRaca($raca);
                 }
                 
 
@@ -48,6 +49,7 @@ class AnimalController extends AbstractController{
         $data['msg'] = $msg;
 
         return $this->render('animal/index.html.twig', $data);
+
     }
 }
 

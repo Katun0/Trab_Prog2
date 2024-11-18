@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\RacaRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: RacaRepository::class)]
@@ -18,6 +20,14 @@ class Raca
 
     #[ORM\Column(length: 200)]
     private ?string $Porte = null;
+
+    #[ORM\OneToMany(mappedBy: 'raca', targetEntity: Animal::class)]
+    private Collection $animals;
+
+    public function __construct()
+    {
+        $this->animals = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -51,5 +61,32 @@ class Raca
     public function __toString(): string
     {
         return $this->nome ?? '';
+    }
+
+    public function getAnimals(): Collection
+    {
+        return $this->animals;
+    }
+
+    public function addAnimal(Animal $animal) : self
+    {
+        if (!$this->animals->contains($animal))
+        {
+            $this->animals->add($animal);
+            $animal->setRaca($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAnimal(Animal $animal) : self
+    {
+        if ($this->animals->removeElement($animal))
+        {
+            if ($animal->getRaca() === $this)
+            { $animal->setRaca(null);}
+        }
+
+        return $this;
     }
 }

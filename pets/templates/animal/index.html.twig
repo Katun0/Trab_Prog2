@@ -23,8 +23,10 @@
       </div>
       <div class="mb-3">
         {{ form_row(animalForm.nome) }}
+        {{ form_row(animalForm.tipo) }}
         {{ form_row(animalForm.raca) }}
         {{ form_row(animalForm.idade) }}
+        {{ form_row(animalForm.foto) }}
         <button type='submit' class='btn btn-success'>Salvar</button>
       </div>
       {{ form_end(animalForm) }}
@@ -38,7 +40,9 @@
                 <td>Id</td>
                 <td>Nome</td>
                 <td>Idade</td>
+                <td>Tipo</td>
                 <td>Raça</td>
+                <td>Foto</td>
             </tr>
         </thead>
         <tbody>
@@ -47,7 +51,9 @@
                     <td>{{ animal.Id }}</td>
                     <td>{{ animal.Nome }}</td>
                     <td>{{ animal.Idade }}</td>
-                    <td>{{ animal.raca }}</td>
+                    <td>{{ animal.tipo.nome}}</td>
+                    <td>{{ animal.raca.nome }}</td>
+                    <td>{{ animal.foto }}</td>
                     <td>
                         <a href="#" class="btn btn-primary">Editar</a>
                         <a href="#" class="btn btn-primary">Excluir</a>
