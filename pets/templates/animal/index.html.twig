@@ -1,0 +1,65 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ titulo }}
+{% endblock %}
+
+{% block body %}
+    <h1> {{ titulo }} </h1>
+
+
+<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#formSection" aria-expanded="false" aria-controls="formSection">
+  Novo
+</button>
+{{ msg }}
+
+
+<div class="collapse" id="formSection">
+  <div class="card card-body mt-3">
+    <form>
+        {{ form_start(animalForm) }}
+      <div class="mb-3">
+        <h2>Cadastro de Animal</h2>
+      </div>
+      <div class="mb-3">
+        {{ form_row(animalForm.nome) }}
+        {{ form_row(animalForm.tipo) }}
+        {{ form_row(animalForm.raca) }}
+        {{ form_row(animalForm.idade) }}
+        {{ form_row(animalForm.foto) }}
+        <button type='submit' class='btn btn-success'>Salvar</button>
+      </div>
+      {{ form_end(animalForm) }}
+    </form>
+  </div>
+</div>
+
+    <table class='table'>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Nome</td>
+                <td>Idade</td>
+                <td>Tipo</td>
+                <td>Raça</td>
+                <td>Foto</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for animal in animais %}
+                <tr>
+                    <td>{{ animal.Id }}</td>
+                    <td>{{ animal.Nome }}</td>
+                    <td>{{ animal.Idade }}</td>
+                    <td>{{ animal.tipo.nome}}</td>
+                    <td>{{ animal.raca.nome }}</td>
+                    <td>{{ animal.foto }}</td>
+                    <td>
+                        <a href="#" class="btn btn-primary">Editar</a>
+                        <a href="#" class="btn btn-primary">Excluir</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
