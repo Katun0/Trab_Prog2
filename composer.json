@@ -1,8 +1,5 @@
 {
     "require": {
-        "symfony/security-core": "^7.1"
-    },
-    "require-dev": {
-        "symfony/maker-bundle": "^1.61"
+        "symfony/webpack-encore-bundle": "^2.2"
     }
 }
