@@ -43,6 +43,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+<<<<<<< HEAD
             ->add('roles', ChoiceType::class, [
                 'choices' => [
                     'Tutor' => 'ROLE_TUTOR',
@@ -50,6 +51,16 @@ class RegistrationFormType extends AbstractType
                 ],
                 'multiple' => true,
                 'expanded' => true,
+=======
+            ->add('type', ChoiceType::class, [
+                'label' => 'Tipo de usuário',
+                'choices' => [
+                    'Tutor' => 'tutor',
+                    'Veterinário' => 'veterinario',
+                ],
+                'expanded' => true, 
+                'multiple' => false, 
+>>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
             ])
             ->add('Salvar', SubmitType::class);
         }

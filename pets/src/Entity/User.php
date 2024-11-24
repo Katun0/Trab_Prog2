@@ -17,6 +17,10 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[ORM\InheritanceType("JOINED")]
 #[ORM\DiscriminatorColumn(name: "type", type: "string")]
 #[ORM\DiscriminatorMap(["tutor" => Tutor::class, "veterinario" => Veterinario::class])]
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -42,7 +46,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 200)]
     private ?string $nome = null;
 
+<<<<<<< HEAD
         /**
+=======
+    /**
+>>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
      * @var Collection<int, Agendamento>
      */
     #[ORM\OneToMany(targetEntity: Agendamento::class, mappedBy: 'user')]
@@ -53,6 +61,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->agendamentos = new ArrayCollection();
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
     public function getId(): ?int
     {
         return $this->id;
@@ -139,4 +151,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+<<<<<<< HEAD
+=======
+        /**
+     * @return string|null
+     */
+    public function getType(): ?string
+    {
+        return $this->type ?? null;
+    }
+
+    /**
+     * @return Collection<int, Agendamento>
+     */
+    public function getAgendamentos(): Collection
+    {
+        return $this->agendamentos;
+    }
+
+>>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
 }

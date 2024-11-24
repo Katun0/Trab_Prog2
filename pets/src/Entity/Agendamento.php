@@ -14,7 +14,11 @@ class Agendamento
     #[ORM\Column]
     private ?int $id = null;
 
+<<<<<<< HEAD
     #[ORM\ManyToOne(inversedBy: 'agendamentos')]
+=======
+    #[ORM\ManyToOne(inversedBy: 'data_agendamento')]
+>>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
     private ?User $user = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
@@ -26,9 +30,12 @@ class Agendamento
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $descricao = null;
 
+<<<<<<< HEAD
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $status = null;
 
+=======
+>>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
     public function getId(): ?int
     {
         return $this->id;
@@ -81,6 +88,7 @@ class Agendamento
 
         return $this;
     }
+<<<<<<< HEAD
 
     public function getStatus(): ?string
     {
@@ -93,4 +101,6 @@ class Agendamento
 
         return $this;
     }
+=======
+>>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
 }

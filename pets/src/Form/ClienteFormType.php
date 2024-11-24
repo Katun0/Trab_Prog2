@@ -18,8 +18,13 @@ class ClienteForm extends AbstractType
         ->add('cpf_cnpj', TextType::class, ['label' => 'CPF/CNPJ',])
         ->add('contato', TextType::class, ['label' => 'Contato',])
         ->add('email', EmailType::class)
+<<<<<<< HEAD
         ->add('endereco', StringType::class, ['label' => 'Endereço'])
         ->add('bairro', StringType::class,['label' => 'Bairro'])
+=======
+        ->add('endereco', TextType::class, ['label' => 'Endereço'])
+        ->add('bairro', TextType::class,['label' => 'Bairro'])
+>>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
         ->add('cep', TextType::class,['label' => 'CEP'])
         ->add('Salvar', SubmitType::class);
     }
