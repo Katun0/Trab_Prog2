@@ -6,19 +6,8 @@ use App\Repository\VeterinarioRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: VeterinarioRepository::class)]
-class Veterinario
+class Veterinario extends User
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
-
-    #[ORM\Column(length: 200)]
-    private ?string $Nome = null;
-
-    #[ORM\Column(length: 200)]
-    private ?string $sobrenome = null;
-
     #[ORM\Column(length: 11, unique:true)]
     private ?string $cpf = null;
 
@@ -28,34 +17,9 @@ class Veterinario
     #[ORM\Column(length: 20)]
     private ?string $contato = null;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getNome(): ?string
-    {
-        return $this->Nome;
-    }
-
-    public function setNome(string $Nome): static
-    {
-        $this->Nome = $Nome;
-
-        return $this;
-    }
-
-    public function getSobrenome(): ?string
-    {
-        return $this->sobrenome;
-    }
-
-    public function setSobrenome(string $sobrenome): static
-    {
-        $this->sobrenome = $sobrenome;
-
-        return $this;
-    }
+    #[ORM\OneToOne(inversedBy: 'veterinario', targetEntity: User::class, cascade: ['persist', 'remove'])]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
 
     public function getCpf(): ?string
     {
@@ -91,5 +55,17 @@ class Veterinario
         $this->contato = $contato;
 
         return $this;
+    }
+
+    public function setUser(?User $user): ?User
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    public function getUser(?User $user): ?User
+    {
+        return $this->user;
     }
 }

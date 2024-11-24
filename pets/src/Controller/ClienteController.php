@@ -24,6 +24,7 @@ class ClienteController extends AbstractController{
             $em->persist($cliente);
             $em->flush();
         }
+        $this->denyAccessUnlessGranted("ROLE_USER");
         $data['titulo'] = 'Cadastro de Clientes';
         $data['clienteForm'] = $form;
 

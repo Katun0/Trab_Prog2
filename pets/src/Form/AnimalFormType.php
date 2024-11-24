@@ -42,7 +42,7 @@ class AnimalFormType extends AbstractType
         'placeholder' => 'Selecione a raça']
     )
         ->add('foto', FileType::class, [
-            'label' => 'Foto de Perfil',
+            'label' => 'Foto',
             'mapped' => false,
             'required' => false,
             'constraints' => [

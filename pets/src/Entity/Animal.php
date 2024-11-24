@@ -3,9 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\AnimalRepository;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use PhpParser\Node\Scalar\Float_;
 
 #[ORM\Entity(repositoryClass: AnimalRepository::class)]
 class Animal
@@ -31,6 +29,13 @@ class Animal
     #[ORM\ManyToOne(targetEntity: AnimalTipo::class, inversedBy: 'animals')]
     #[ORM\JoinColumn(nullable: false)]
     private ?AnimalTipo $Tipo = null;
+
+    #[ORM\ManyToOne(targetEntity: Tutor::class, inversedBy: 'animais')]
+    private ?Tutor $tutor = null;
+
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Cliente $cliente = null;
 
     
 
@@ -95,6 +100,30 @@ class Animal
     public function setTipo(?AnimalTipo $Tipo): static
     {
         $this->Tipo = $Tipo;
+
+        return $this;
+    }
+
+    public function getTutor(): ?Tutor
+    {
+        return $this->tutor;
+    }
+
+    public function setTutor(?Tutor $tutor): static
+    {
+        $this->tutor = $tutor;
+
+        return $this;
+    }
+
+    public function getCliente(): ?Cliente
+    {
+        return $this->cliente;
+    }
+
+    public function setCliente(?Cliente $cliente): static
+    {
+        $this->cliente = $cliente;
 
         return $this;
     }
