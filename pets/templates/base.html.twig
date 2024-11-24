@@ -21,7 +21,7 @@
         {% endblock %}
     </head>
 
-
+    {% if app.request.get('_route') != 'app_login' %}
     <body>
         <nav class='navbar navbar-expand navbar-dark bg-dark'>
             <div class="container">
@@ -49,13 +49,18 @@
                         </li>
 
                         <li class='nav-item'>
+                            <a class='nav-link' href="{{ path('app_agendamento') }}">Agendamentos</a>
+                        </li>
+
+                        <li class='nav-item'>
                             <a class='nav-link' href="{{ path('app_logout') }}">Sair do Sistema</a>
                         </li>
+                        
                     </ul>
                 </div>
             </div>
         </nav>
-
+    {% endif %}
         {% block body %} 
         {% endblock %}
     </body>

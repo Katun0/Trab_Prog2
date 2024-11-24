@@ -15,6 +15,7 @@ class VeterinarioController extends AbstractController
     #[Route('cadastro/veterinario', name:'app_cadastroVeterinario')]
     public function index(Request $request, EntityManagerInterface $em) : Response
     {
+        $this->denyAccessUnlessGranted("ROLE_USER");
         $msg = '';
         $veterinario = new Veterinario();
         $form = $this->createForm(VeterinarioFormType::class, $veterinario);

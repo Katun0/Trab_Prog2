@@ -1,6 +1,7 @@
 <?php 
 namespace app\Form;
 
+use Doctrine\DBAL\Types\StringType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -17,6 +18,9 @@ class ClienteForm extends AbstractType
         ->add('cpf_cnpj', TextType::class, ['label' => 'CPF/CNPJ',])
         ->add('contato', TextType::class, ['label' => 'Contato',])
         ->add('email', EmailType::class)
+        ->add('endereco', TextType::class, ['label' => 'Endereço'])
+        ->add('bairro', TextType::class,['label' => 'Bairro'])
+        ->add('cep', TextType::class,['label' => 'CEP'])
         ->add('Salvar', SubmitType::class);
     }
 }

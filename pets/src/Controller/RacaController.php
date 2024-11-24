@@ -15,6 +15,7 @@ class RacaController extends AbstractController
     #[Route('/raca', name: 'app_raca')]
     public function index(Request $request, EntityManagerInterface $em): Response
     {
+        $this->denyAccessUnlessGranted("ROLE_USER");
         $raca = new Raca();
         $form = $this->createForm(RacaFormType::class, $raca);
         $form->handleRequest($request);

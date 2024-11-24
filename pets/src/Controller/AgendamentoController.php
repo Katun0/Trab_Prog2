@@ -6,12 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class HomeController extends AbstractController
+class AgendamentoController extends AbstractController
 {
-    #[Route('/home', name:'app_home')]
+    #[Route('/agendamento', name: 'app_agendamento')]
     public function index(): Response
     {
-        $this->denyAccessUnlessGranted("ROLE_USER");
-        return $this->render('home/home.html.twig');
+        return $this->render('agendamento/index.html.twig', [
+            'controller_name' => 'AgendamentoController',
+        ]);
     }
 }
