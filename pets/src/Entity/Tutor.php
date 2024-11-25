@@ -21,10 +21,7 @@ class Tutor extends User
     {
         $this->animais = new ArrayCollection();
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
     /**
      * @return Collection<int, Animal>
      */

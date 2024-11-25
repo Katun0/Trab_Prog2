@@ -11,72 +11,27 @@
 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#formSection" aria-expanded="false" aria-controls="formSection">
   Novo
 </button>
-<<<<<<< HEAD
 
 <!-- Seção colapsável com o formulário -->
 <div class="collapse" id="formSection">
   <div class="card card-body mt-3">
     <h2>Cadastro de Usuário</h2>
-
-    {{ form_start(form, {'attr': {'id': 'userForm'}}) }}
     
-    <div class="mb-3">
+      <div class="mb-3">
         {{ form_widget(form.nome) }}
       </div>
+      
       <div class="mb-3">
         {{ form_widget(form.email) }}
       </div>
+      
       <div class="mb-3">
         {{ form_widget(form.plainPassword) }}
       </div>
+
       <div class="mb-3">
         {{ form_widget(form.roles) }}
       </div>
-      
-      <!-- Campos específicos para Tutor -->
-      <div id="tutorFields" class="mb-3" style="display:none;">
-        <h4>Informações de Tutor</h4>
-        <div>
-          <label for="tutor_contato">Contato</label>
-          <input type="text" id="tutor_contato" class="form-control" name="tutor[contato]">
-        </div>
-        <div>
-          <label for="tutor_endereco">Endereço</label>
-          <input type="text" id="tutor_endereco" class="form-control" name="tutor[endereco]">
-        </div>
-      </div>
-      
-      <!-- Campos específicos para Veterinário -->
-      <div id="vetFields" class="mb-3" style="display:none;">
-        <h4>Informações de Veterinário</h4>
-        <div>
-          <label for="vet_crmv">CRMV</label>
-          <input type="text" id="vet_crmv" class="form-control" name="vet[crmv]">
-        </div>
-        <div>
-          <label for="vet_especialidade">Especialidade</label>
-          <input type="text" id="vet_especialidade" class="form-control" name="vet[especialidade]">
-        </div>
-      </div>
-      
-    {{ form_end(form) }}
-=======
-<div class="collapse" id="formSection">
-  <div class="card card-body mt-3">
-    <form>
-        {{ form_start(form) }}
-      <div class="mb-3">
-        <h2>Cadastro de Animal</h2>
-      </div>
-      <div class="mb-3">
-        {{ form_row(form.nome) }}
-        {{ form_row(form.email) }}
-        {{ form_row(form.plainPassword) }}
-        {{ form_row(form.type) }}
-      </div>
-      {{ form_end(form) }}
-    </form>
->>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
   </div>
 </div>
 
@@ -104,27 +59,4 @@
         </tbody>
     </table>
 
-<<<<<<< HEAD
-    <script>
-    // Detecta mudanças nos checkboxes de roles
-    document.querySelectorAll('[name="user[roles][]"]').forEach(function(checkbox) {
-        checkbox.addEventListener('change', function() {
-            // Verifica se "Tutor" está selecionado
-            if (document.querySelector('[value="ROLE_TUTOR"]').checked) {
-                document.getElementById('tutorFields').style.display = 'block';
-            } else {
-                document.getElementById('tutorFields').style.display = 'none';
-            }
-
-            // Verifica se "Veterinário" está selecionado
-            if (document.querySelector('[value="ROLE_VETERINARIO"]').checked) {
-                document.getElementById('vetFields').style.display = 'block';
-            } else {
-                document.getElementById('vetFields').style.display = 'none';
-            }
-        });
-    });
-</script>
-=======
->>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
 {% endblock %}

@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-<<<<<<< HEAD
 use App\Entity\Agendamento;
 use App\Form\AgendamentoFormType;
 use App\Repository\AgendamentoRepository;
@@ -12,16 +11,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-=======
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
->>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
+
 
 class AgendamentoController extends AbstractController
 {
     #[Route('/agendamento', name: 'app_agendamento')]
-<<<<<<< HEAD
     public function index(
         Request $request,
         EntityManagerInterface $em,
@@ -110,12 +104,4 @@ class AgendamentoController extends AbstractController
         ]);
     }
     
-=======
-    public function index(): Response
-    {
-        return $this->render('agendamento/index.html.twig', [
-            'controller_name' => 'AgendamentoController',
-        ]);
-    }
->>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
 }

@@ -17,11 +17,7 @@ class Veterinario extends User
     #[ORM\Column(length: 20)]
     private ?string $contato = null;
 
-<<<<<<< HEAD
-    #[ORM\OneToOne(inversedBy: 'veterinario', targetEntity: User::class, cascade: ['persist', 'remove'])]
-=======
     #[ORM\OneToOne(inversedBy: 'veterinario', targetEntity: User::class)]
->>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 

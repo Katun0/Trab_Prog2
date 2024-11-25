@@ -3,11 +3,7 @@
 {% block title %}Pets - Agendamentos{% endblock %}
 
 {% block body %}
-<<<<<<< HEAD
-<h1>{{ titulo }}</h1>
-=======
 <h1>Lista de Agendamentos</h1>
->>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
 
 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#formSection" aria-expanded="false" aria-controls="formSection">
   Novo
@@ -19,7 +15,6 @@
         <h2>Cadastrar agendamentos</h2>
       </div>
       <div class="mb-3">
-<<<<<<< HEAD
         {{ form_start(formNovo) }}
         {{ form_end(formNovo) }}
       </div>
@@ -30,7 +25,6 @@
   </div>
 </div>
 
-=======
       </div>
     </form>
   </div>
@@ -38,23 +32,18 @@
 
 
 
->>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
 <table class='table'>
         <thead>
             <tr>
                 <td>Id</td>
-<<<<<<< HEAD
                 <td>Responsável</td>
                 <td>Serviço</td>
-=======
-                <td>Titulo</td>
->>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
                 <td>Status</td>
+                <td>Açoes</td>
             </tr>
         </thead>
         
         <tbody>
-<<<<<<< HEAD
             {% for agendamento in agendamentos %}
                 <tr>
                     <td>{{ agendamento.id}}</td>
@@ -83,20 +72,5 @@
                     </td>
                 </tr>
  {% endfor %}
-=======
-
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <a href="#" class="btn btn-primary">Editar</a>
-                        <a href="#" class="btn btn-primary">Excluir</a>
-                    </td>
-                </tr>
-
->>>>>>> 2d58c410fbb1caf7b679b3b0396c1aa5a5047edc
-        </tbody>
-    </table>
 
 {% endblock %}
