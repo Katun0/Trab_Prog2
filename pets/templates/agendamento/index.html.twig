@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pets - Agendamentos{% endblock %}
+
+{% block body %}
+<h1>Lista de Agendamentos</h1>
+
+<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#formSection" aria-expanded="false" aria-controls="formSection">
+  Novo
+</button>
+<div class="collapse" id="formSection">
+  <div class="card card-body mt-3">
+    <form>
+      <div class="mb-3">
+        <h2>Cadastrar agendamentos</h2>
+      </div>
+      <div class="mb-3">
+        {{ form_start(formNovo) }}
+        {{ form_end(formNovo) }}
+      </div>
+    </form>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#formSection" aria-expanded="false" aria-controls="formSection">
+  Fechar
+</button>
+  </div>
+</div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+<table class='table'>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Responsável</td>
+                <td>Serviço</td>
+                <td>Status</td>
+                <td>Açoes</td>
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for agendamento in agendamentos %}
+                <tr>
+                    <td>{{ agendamento.id}}</td>
+                    <td>{{ agendamento.user.nome}}</td>
+                    <td>{{ agendamento.servico.nome}}</td>
+                    <td>{{ agendamento.Status}}</td>
+                    <td>
+        <!-- Botão para abrir o modal de edição -->
+        <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#formSection{{ agendamento.id }}" aria-expanded="false" aria-controls="formSection{{ agendamento.id }}">
+          <i class="bi bi-pencil-square"></i>
+        </button>
+
+        <!-- Formulário de Edição no Modal -->
+        <div class="collapse mt-2" id="formSection{{ agendamento.id }}">
+            <div class="card card-body">
+                <form method="POST" action="{{ path('app_agendamento_editar', { id: agendamento.id }) }}">
+                    {{ form_start(formsEdicao[agendamento.id]) }}
+                    {{ form_widget(formsEdicao[agendamento.id]) }}
+                    {{ form_end(formsEdicao[agendamento.id]) }}
+                        <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#formSection{{ agendamento.id }}" aria-expanded="false" aria-controls="formSection{{ agendamento.id }}">
+                          Fechar
+                        </button>
+                </form>
+            </div>
+        </div>
+                    </td>
+                </tr>
+ {% endfor %}
+
+{% endblock %}
