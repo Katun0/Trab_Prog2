@@ -39,7 +39,7 @@
                 <td>Responsável</td>
                 <td>Serviço</td>
                 <td>Status</td>
-                <td>Açoes</td>
+                <td>Ações</td>
             </tr>
         </thead>
         
@@ -60,6 +60,7 @@
         <div class="collapse mt-2" id="formSection{{ agendamento.id }}">
             <div class="card card-body">
                 <form method="POST" action="{{ path('app_agendamento_editar', { id: agendamento.id }) }}">
+                  <h2> Editar agendamento {{agendamento.id}}</h2>
                     {{ form_start(formsEdicao[agendamento.id]) }}
                     {{ form_widget(formsEdicao[agendamento.id]) }}
                     {{ form_end(formsEdicao[agendamento.id]) }}

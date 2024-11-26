@@ -1,6 +1,53 @@
 {% extends "base.html.twig" %}
 
+
+{% block title %}PETS - Home{% endblock %}
+
 {% block body %}
-    <h1>Bem vindo</h1>
-    
+<body style="background-color: #a6f77b;">    
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; background-color">
+    <!-- Informações do Animal -->
+    <div style="flex: 1; max-width: 60%;background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+        <div style="display: flex; gap: 20px;">
+            <img src="{{asset('images/Millo.jpg')}}" alt="Animal" style="width: 300px; height: 300px; border-radius: 8px;">
+            <div>
+                <h2>{{ animal.nome }}</h2>
+                <p><strong>Espécie:</strong> {{ animal.especie }}</p>
+                <p><strong>Raça:</strong> {{ animal.raca }}</p>
+                <p><strong>Idade:</strong> {{ animal.idade }}</p>
+                <p><strong>Cor:</strong> {{ animal.cor }}</p>
+                <p><strong>Castrado:</strong> {{ animal.castrado ? 'Sim' : 'Não' }}</p>
+                <p><strong>Último Peso:</strong> {{ animal.peso }} Kg</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px; display: flex; gap: 10px;">
+            <button style="padding: 10px 20px; background: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Iniciar Consulta</button>
+            <button style="padding: 10px 20px; background: #6c757d; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Agendar Retorno</button>
+        </div>
+
+        <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+            <div style="background: #ffcc80; padding: 20px; border-radius: 4px; text-align: center; cursor: pointer;">Histórico de Consultas</div>
+            <div style="background: #90caf9; padding: 20px; border-radius: 4px; text-align: center; cursor: pointer;">Exames</div>
+            <div style="background: #80cbc4; padding: 20px; border-radius: 4px; text-align: center; cursor: pointer;">Vacinas</div>
+            <div style="background: #f48fb1; padding: 20px; border-radius: 4px; text-align: center; cursor: pointer;">Medicamentos</div>
+            <div style="background: #ef9a9a; padding: 20px; border-radius: 4px; text-align: center; cursor: pointer;">Cirurgias</div>
+        </div>
+    </div>
+
+    <!-- Informações do Tutor -->
+    <div style="flex: 1; max-width: 35%; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+        <div style="text-align: center;">
+            <img src="{{ asset('images/joao.jpg')}}" alt="Tutor" style="width: 300px; height: 300px; border-radius: 50%;">
+            <h3>{{ tutor.nome }}</h3>
+        </div>
+        <p><strong>Idade:</strong> {{ tutor.idade }}</p>
+        <p><strong>CPF:</strong> {{ tutor.cpf }}</p>
+        <p><strong>Contato:</strong> {{ tutor.contato }}</p>
+        <p><strong>Endereço:</strong></p>
+        <p>{{ tutor.endereco.logradouro }}</p>
+        <p>{{ tutor.endereco.cep }}</p>
+    </div>
+</div>
+</body>
 {% endblock %}

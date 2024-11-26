@@ -42,7 +42,7 @@
                 <td>Idade</td>
                 <td>Tipo</td>
                 <td>Raça</td>
-                <td>Foto</td>
+                <td>Ações</td>
             </tr>
         </thead>
         <tbody>
@@ -53,10 +53,10 @@
                     <td>{{ animal.Idade }}</td>
                     <td>{{ animal.tipo.nome}}</td>
                     <td>{{ animal.raca.nome }}</td>
-                    <td>{{ animal.foto }}</td>
                     <td>
-                        <a href="#" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
-                        <a href="#" class="btn btn-primary">Excluir</a>
+                      <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="collapse">
+          <i class="bi bi-pencil-square"></i>
+        </button>
                     </td>
                 </tr>
             {% endfor %}
