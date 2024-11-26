@@ -15,9 +15,10 @@
                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
 
-
-            <h1><span>P.E.T.S</span> Login</h1>
-            
+            <div>
+            <h1>P.E.T.S</h1>
+            <div class="underline-title"></div>
+            </div>
             <div class='input-box'>
                 <label class="email-label" for="inputEmail">Email</label>
                     <input type="email" placeholder='exemplo@exemplo.com.br' value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>

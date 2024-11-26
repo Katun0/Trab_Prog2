@@ -12,6 +12,30 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         $this->denyAccessUnlessGranted("ROLE_USER");
-        return $this->render('home/home.html.twig');
+
+            // Simulando dados de exemplo
+            $animal = [
+                'nome' => 'Millo',
+                'especie' => 'Cão',
+                'raca' => 'Pug Gordo',
+                'cor' => 'Branco',
+                'idade' => '2 Anos',
+                'peso' => 'Muitos',
+                'castrado' => false,
+            ];
+    
+            $tutor = [
+                'nome' => 'João S.',
+                'idade' => 21,
+                'cpf' => '074.163.119.93',
+                'contato' => '(49) 9 9953-9716',
+                'endereco' => [
+                    'logradouro' => 'Rua 10 de setembro, 2050',
+                    'cep' => '89566-266',
+                ],
+            ];
+        return $this->render('home/home.html.twig', [
+            'animal' => $animal,
+            'tutor' => $tutor,]);
     }
 }

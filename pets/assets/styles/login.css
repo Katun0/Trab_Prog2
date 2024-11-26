@@ -4,22 +4,45 @@ html, body {
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
-    background-color: #f5f5f5; /* Fundo da página */
+    background-color: #a6f77b; /* Fundo da página */
 }
 
 .center {
-    width: 400px; /* Largura do modal */
-    padding: 20px; /* Espaçamento interno */
-    background-color: #ffffff; /* Fundo branco para contraste */
-    border: 2px solid #ddd; /* Borda leve */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-    text-align: center; /* Centraliza o conteúdo dentro do modal */
+    padding: 12px 44px;
 }
-
+.form 
+{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+h1
+{
+    font-family: "Raleway Thin", sans-serif;
+    letter-spacing: 4px;
+    padding-bottom: 23px;
+    padding-top: 13px;
+    text-align: center;
+}
+.container
+{
+    background: #fbfbfb;
+    border-radius: 8px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+    height: 410px;
+    margin: 6rem auto 8.1rem auto;
+    width: 350px;
+}
 h1 {
     font-size: 30px;
     margin-bottom: 10px;
+    font-family: "Raleway Thin", sans-serif;
+    letter-spacing: 4px;
+    padding-bottom: 23px;
+    padding-top: 13px;
+    text-align: center;
 }
 
 .input-box {
@@ -35,20 +58,43 @@ h1 {
 }
 
 .btn {
-    width: 100%;
-    padding: 10px;
-    background-color: #6CE6A5;
-    color: #000;
+    background: -webkit-linear-gradient(right, #a6f77b, #2dbd6e);
+    color: white;
+    box-shadow: 0px 1px 8px #24c64f;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 21px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+    
+    transition: 0.25s;
+    width: 153px;
 }
 
-a {
+.btn:hover {
+    background-color: #007e33; /* Cor ao passar o mouse */
+}
+
+.btn-register a {
     display: block;
-    margin-top: 10px;
-    font-size: 12px;
     color: #007bff;
     text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-register {
+    margin-top: 15px;
+}
+
+.btn-register a:hover {
+    text-decoration: underline;
+}
+.underline-title 
+{
+  background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
+  height: 2px;
+  margin: -1.1rem auto 0 auto;
+  width: 89px;
 }
